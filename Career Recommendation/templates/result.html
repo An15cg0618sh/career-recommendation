@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Guide | Your Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AI Career Guide</div>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('form') }}">Find Your Career</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="results-section">
+            <h1>Your Career Recommendations</h1>
+            
+            <div class="profile-summary">
+                <h2>Your Profile</h2>
+                <div class="profile-details">
+                    <div class="profile-item">
+                        <h3>Skills</h3>
+                        <ul>
+                            {% for skill in user_data.skills %}
+                            <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="profile-item">
+                        <h3>Interests</h3>
+                        <ul>
+                            {% for interest in user_data.interests %}
+                            <li>{{ interest }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="profile-item">
+                        <h3>Education</h3>
+                        <p>{{ user_data.education }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h2>Recommended Career Paths</h2>
+                <p class="recommendation-intro">Based on your profile, our AI recommends the following career paths:</p>
+                
+                <div class="recommendation-cards">
+                    {% for career in recommendations %}
+                    <div class="recommendation-card">
+                        <div class="match-percentage">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle" stroke-dasharray="{{ career.match_percentage }}, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <text x="18" y="20.35" class="percentage">{{ career.match_percentage }}%</text>
+                            </svg>
+                        </div>
+                        <div class="career-details">
+                            <h3>{{ career.title }}</h3>
+                            <p>{{ career.description }}</p>
+                            
+                            <div class="career-requirements">
+                                <h4>Required Skills</h4>
+                                <ul class="skill-tags">
+                                    {% for skill in career.skills_needed %}
+                                    <li class="skill-tag {% if skill in user_data.skills %}match{% endif %}">{{ skill }}</li>
+                                    {% endfor %}
+                                </ul>
+                                
+                                <h4>Education Needed</h4>
+                                <ul class="education-list">
+                                    {% for edu in career.education %}
+                                    <li class="{% if edu == user_data.education %}match{% endif %}">{{ edu }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="next-steps">
+                <h2>Next Steps</h2>
+                <p>Now that you have some career ideas, consider:</p>
+                <ul>
+                    <li>Researching more about these career paths online</li>
+                    <li>Speaking with a career counselor at your school</li>
+                    <li>Finding internships or job shadowing opportunities</li>
+                    <li>Meeting professionals in these fields</li>
+                </ul>
+                <a href="{{ url_for('form') }}" class="btn-secondary">Try Again with Different Inputs</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AI Career Guide. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
