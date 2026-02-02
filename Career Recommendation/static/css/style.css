@@ -1,0 +1,443 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9fafc;
+}
+
+a {
+    text-decoration: none;
+    color: #4c86b0;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    margin: 3rem 0;
+    padding: 1.5rem 0;
+}
+
+/* Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4c86b0;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav a {
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #4c86b0;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #4c86b0;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3a6d94;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #e7eef7;
+    color: #4c86b0;
+}
+
+.btn-secondary:hover {
+    background-color: #d6e5f5;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Features Section */
+.features {
+    text-align: center;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #4c86b0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+/* About Section */
+.about {
+    background-color: #e7eef7;
+    padding: 3rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Form Section */
+.form-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-intro {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-grid, .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.checkbox-item, .radio-item {
+    width: 25%;
+    min-width: 170px;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input, .radio-item input {
+    margin-right: 0.5rem;
+}
+
+.validation-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    height: 20px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Results Page */
+.results-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-summary {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile-item {
+    flex: 1;
+    min-width: 200px;
+    margin: 0.5rem;
+}
+
+.profile-item ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.recommendations {
+    margin-bottom: 2rem;
+}
+
+.recommendation-intro {
+    margin-bottom: 1.5rem;
+}
+
+.recommendation-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.recommendation-card {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.match-percentage {
+    flex: 0 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f7fa;
+    padding: 1rem;
+}
+
+.career-details {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.circular-chart {
+    width: 100px;
+    height: 100px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke: #4c86b0;
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 1s ease;
+}
+
+.percentage {
+    fill: #4c86b0;
+    font-size: 0.5em;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+.career-requirements {
+    margin-top: 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.skill-tag {
+    background-color: #eee;
+    color: #555;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.skill-tag.match {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.education-list {
+    margin: 0.5rem 0 1rem;
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+.education-list .match {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.next-steps {
+    background-color: #e7eef7;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.next-steps ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .recommendation-card {
+        flex-direction: column;
+    }
+
+    .match-percentage {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .checkbox-item, .radio-item {
+        width: 50%;
+    }
+
+    .profile-details {
+        flex-direction: column;
+    }
+}
